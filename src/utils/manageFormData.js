@@ -33,6 +33,7 @@ export const submissionHasOneFieldEntry = (values) => {
  * @returns An object of modified input groups
  */
 export const cleanGroupedFields = (values) => {
+  if (!values || typeof values !== 'object') return {}; // Prevent undefined access
   for (const [key, value] of Object.entries(values)) {
     if (Array.isArray(value)) {
       value
